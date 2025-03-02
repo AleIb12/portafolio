@@ -1,0 +1,511 @@
+/* Estilos personalizados para el portafolio */
+/* Eliminamos los estilos por defecto que puedan entrar en conflicto con Tailwind */
+
+/* Podemos agregar algunos estilos personalizados si son necesarios en el futuro */
+
+/* Estilos para el Nav */
+.navbar {
+  background-color: var(--color-white);
+  padding: 1rem 0;
+  box-shadow: var(--shadow-md);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.navbar-menu {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+.navbar-link {
+  color: var(--color-gray-700);
+  transition: color 0.3s;
+}
+
+.navbar-link:hover {
+  color: var(--color-primary);
+}
+
+/* Dock Component */
+.dock-container {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  width: auto;
+}
+
+.dock {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 12px 24px;
+  background-color: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  height: 70px;
+}
+
+.dock-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 15px;
+  transition: transform 0.2s ease;
+}
+
+.dock-icon-container {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s;
+  margin-bottom: 5px;
+}
+
+.dock-icon-container svg {
+  width: 28px;
+  height: 28px;
+  fill: var(--color-primary);
+}
+
+.dock-item-active .dock-icon-container {
+  background-color: var(--color-primary);
+  box-shadow: 0 6px 16px rgba(79, 70, 229, 0.4);
+}
+
+.dock-item-active .dock-icon-container svg {
+  fill: var(--color-white);
+}
+
+.dock-label {
+  position: absolute;
+  top: -40px;
+  padding: 5px 10px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.2s, transform 0.2s;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.dock-label-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.dock-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@media (max-width: 768px) {
+  .dock {
+    padding: 8px 16px;
+  }
+  
+  .dock-item {
+    margin: 0 10px;
+  }
+  
+  .dock-icon-container {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .dock-icon-container svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+/* Hero Section */
+.hero {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  padding: 5rem 0;
+  text-align: center;
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  font-weight: normal;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.25rem;
+  transition: all 0.3s;
+  font-weight: 500;
+}
+
+.btn-primary {
+  background-color: var(--color-white);
+  color: var(--color-primary);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-gray-100);
+}
+
+/* Estilos para GlassIcons y redes sociales */
+.social-links {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+/* Ajustes para el SpotlightCard */
+.spotlight-card {
+  margin: 0 auto;
+  max-width: 400px;
+  width: 100%;
+}
+
+@media (max-width: 500px) {
+  .spotlight-card {
+    max-width: 90%;
+  }
+}
+
+/* Section común */
+.section {
+  padding: 4rem 0;
+}
+
+.section-title {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  animation: slideUp 0.5s ease-out;
+}
+
+/* Sobre mí */
+.about-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.about-text {
+  color: var(--color-gray-700);
+  font-size: 1.125rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Habilidades */
+.skills-container {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .skills-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .skills-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.skill-card {
+  background-color: var(--color-white);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: var(--shadow-md);
+}
+
+.skill-title {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.skill-list {
+  list-style: none;
+}
+
+.skill-item {
+  margin-bottom: 0.5rem;
+}
+
+.skill-bar {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.skill-name {
+  width: 6rem;
+}
+
+.progress-container {
+  flex: 1;
+  height: 0.625rem;
+  background-color: var(--color-gray-200);
+  border-radius: 9999px;
+}
+
+.progress-bar {
+  height: 100%;
+  border-radius: 9999px;
+  background-color: var(--color-primary);
+}
+
+.w-60 {
+  width: 60%;
+}
+
+.w-75 {
+  width: 75%;
+}
+
+.w-80 {
+  width: 80%;
+}
+
+.w-90 {
+  width: 90%;
+}
+
+/* Proyectos */
+.projects-container {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .projects-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .projects-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.project-card {
+  background-color: var(--color-gray-100);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  animation: fadeIn 0.6s ease-out;
+}
+
+.project-image {
+  height: 12rem;
+  background-color: var(--color-gray-300);
+}
+
+.project-content {
+  padding: 1.5rem;
+}
+
+.project-title {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.project-description {
+  color: var(--color-gray-500);
+  margin-bottom: 1rem;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.project-tag {
+  background-color: rgba(79, 70, 229, 0.1);
+  color: var(--color-primary);
+  font-size: 0.75rem;
+  padding: 0.25rem 0.625rem;
+  border-radius: 9999px;
+}
+
+.project-link {
+  font-weight: 500;
+  color: var(--color-primary);
+}
+
+.project-link:hover {
+  color: var(--color-primary-dark);
+}
+
+/* Contacto */
+.contact {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  padding: 4rem 0;
+}
+
+.contact-form {
+  max-width: 32rem;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.625rem;
+  border: 1px solid var(--color-gray-300);
+  border-radius: 0.375rem;
+  font-family: var(--font-sans);
+}
+
+.form-textarea {
+  width: 100%;
+  padding: 0.625rem;
+  border: 1px solid var(--color-gray-300);
+  border-radius: 0.375rem;
+  font-family: var(--font-sans);
+  min-height: 6rem;
+}
+
+.form-input-error, 
+.form-textarea-error {
+  border-color: #ef4444 !important;
+  background-color: rgba(239, 68, 68, 0.05);
+}
+
+.error-text {
+  color: #ef4444;
+  font-size: 0.75rem;
+  margin-top: 0.25rem;
+}
+
+.form-error {
+  background-color: rgba(239, 68, 68, 0.1);
+  border: 1px solid #ef4444;
+  color: #ef4444;
+  padding: 0.75rem;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+}
+
+.success-message {
+  text-align: center;
+  padding: 2rem;
+}
+
+.success-message h3 {
+  font-size: 1.5rem;
+  color: var(--color-white);
+  margin-bottom: 0.5rem;
+}
+
+.success-message p {
+  margin-bottom: 1.5rem;
+}
+
+.btn-full {
+  width: 100%;
+}
+
+.social-links {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.social-link {
+  color: var(--color-white);
+  transition: color 0.2s;
+}
+
+.social-link:hover {
+  color: var(--color-gray-100);
+}
+
+.social-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+/* Animaciones para componentes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Footer */
+.footer {
+  background-color: var(--color-gray-800);
+  color: var(--color-white);
+  padding: 2rem 0;
+  text-align: center;
+}
