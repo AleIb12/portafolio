@@ -6,12 +6,13 @@ Este es un portafolio moderno y dinámico construido con React y Vite, que prese
 
 - 🎨 Fondos animados interactivos (Aurora, Iridiscencia, Partículas)
 - ✨ Efectos visuales avanzados con WebGL y Canvas
-- 🌟 Animaciones de scroll con ScrollReveal
-- 🎯 Componentes interactivos (BounceCard, SpotlightCard)
+- 🌟 Animaciones de scroll con ScrollReveal y efectos de secuenciación
+- 🎯 Componentes interactivos (BounceCard, SpotlightCard, GlassIcon)
 - 🌈 Efectos de hover y transiciones suaves
 - 📱 Diseño totalmente responsive
 - 🚀 Optimización de rendimiento
 - 🎭 Efectos de glassmorphism
+- 📄 Visor de PDF integrado con controles avanzados
 
 ## 🛠 Tecnologías Utilizadas
 
@@ -20,6 +21,8 @@ Este es un portafolio moderno y dinámico construido con React y Vite, que prese
 - TailwindCSS
 - WebGL/Canvas para efectos visuales
 - PostCSS
+- React Hooks avanzados
+- Intersection Observer API
 
 ## 🚀 Inicio Rápido
 
@@ -58,6 +61,8 @@ src/
   │   ├── SkillBar.jsx
   │   └── SpotlightCard.jsx
   ├── assets/              # Recursos estáticos
+  │   ├── Alisha.pdf      # CV en formato PDF
+  │   └── react.svg       # Otros recursos
   ├── App.jsx             # Componente principal
   └── main.jsx            # Punto de entrada
 ```
@@ -66,14 +71,43 @@ src/
 
 ### Fondos Animados
 - **AnimatedBackground**: Sistema de partículas interactivas
-- **AuroraBackground**: Efecto aurora boreal animado
-- **IridescenceBackground**: Efecto iridiscente con WebGL
+- **AuroraBackground**: Efecto aurora boreal animado con Canvas
+- **IridescenceBackground**: Efecto iridiscente avanzado con shaders WebGL
 
 ### Componentes UI
-- **BounceCard**: Tarjetas con efecto de rebote y rotación 3D
-- **SpotlightCard**: Tarjetas con efecto spotlight al hover
-- **GlassIcon**: Iconos con efecto glassmorphism
-- **ScrollReveal**: Animaciones al hacer scroll
+- **BounceCard**: Tarjetas con efecto de rebote, rotación 3D y resplandor
+- **SpotlightCard**: Tarjetas con efecto spotlight y visor de PDF integrado
+- **GlassIcon**: Iconos con efecto glassmorphism y efectos de brillo
+- **ScrollReveal**: Sistema de animaciones al scroll con múltiples efectos:
+  - FadeIn, SlideUp, SlideRight, SlideLeft, ScaleIn, FlipIn
+  - ScrollRevealGroup para animar elementos en secuencia
+
+## 🔍 Características Detalladas
+
+### ScrollReveal
+- Animaciones activadas mediante Intersection Observer
+- Múltiples tipos de animación predefinidos
+- Personalización de duración, retraso y umbral de activación
+- Agrupación de elementos con retraso secuencial
+
+### SpotlightCard
+- Efecto spotlight que sigue al cursor
+- Visor de PDF integrado con:
+  - Navegación entre páginas
+  - Controles de zoom
+  - Descarga directa
+  - Modo pantalla completa
+  - Indicador de carga
+
+### GlassIcon
+- Efecto glassmorphism con blur
+- Animación de brillo al hover
+- Tooltips informativos
+
+### AuroraBackground y IridescenceBackground
+- Efectos visuales generados dinámicamente
+- Interacción con el movimiento del cursor
+- Optimización de rendimiento con Canvas/WebGL
 
 ## 📝 Scripts Disponibles
 
@@ -83,11 +117,12 @@ src/
 
 ## 🎨 Personalización
 
-Los componentes están diseñados para ser altamente personalizables. Puedes modificar:
+Los componentes están diseñados para ser altamente personalizables mediante props:
 
-- Colores y temas a través de TailwindCSS
-- Efectos y animaciones ajustando los parámetros de los componentes
-- Estilos y layouts modificando las clases de Tailwind
+- Colores, velocidades y intensidades de efectos
+- Duración y estilos de animaciones
+- Configuración del visor de PDF
+- Umbrales de activación para ScrollReveal
 
 ## 📱 Responsive Design
 
@@ -99,8 +134,9 @@ El portafolio está optimizado para diferentes tamaños de pantalla:
 ## ⚡ Optimización de Rendimiento
 
 - Lazy loading de componentes pesados
-- Optimización de efectos visuales
-- Minimización de re-renders
+- Optimización de efectos visuales con requestAnimationFrame
+- Limpieza adecuada de recursos en useEffect
+- Minimización de re-renders con useRef y useState estratégico
 - Code splitting automático con Vite
 
 ## 📄 Licencia
