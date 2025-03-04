@@ -289,7 +289,7 @@ function App() {
                   
                   {/* LinkedIn Glass Icon */}
                   <GlassIcon 
-                    href="https://www.linkedin.com/in/jose-alejandro-ibarra-bello-4526561b6/" 
+                    href="https://www.linkedin.com/in/alisha-ibarra-bello-4526561b6/" 
                     label="LinkedIn"
                     size={50}
                     glowColor="#0077b5"

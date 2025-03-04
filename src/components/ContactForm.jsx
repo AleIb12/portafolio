@@ -1,4 +1,5 @@
 import React, { useState, useReducer } from 'react';
+import emailjs from '@emailjs/browser';
 
 // Componente ContactForm usando patrones de React Bits:
 // - State Reducer Pattern
@@ -111,8 +112,20 @@ export const useContactForm = (onSubmitCallback) => {
     dispatch({ type: 'submit' });
     
     try {
-      // Simulación de envío de datos
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      const formData = new FormData();
+      formData.append('name', state.nombre.value);
+      formData.append('email', state.email.value);
+      formData.append('message', state.mensaje.value);
+
+      const response = await fetch('https://formsubmit.co/ibarrabelloalisha@gmail.com', {
+        method: 'POST',
+        body: formData
+      });
+
+      if (!response.ok) {
+        throw new Error('Error al enviar el formulario');
+      }
+
       if (onSubmitCallback) {
         await onSubmitCallback({
           nombre: state.nombre.value,
