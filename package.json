@@ -11,9 +11,12 @@
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
+    "i18next": "^24.2.2",
+    "i18next-browser-languagedetector": "^8.0.4",
     "react": "^19.0.0",
     "react-bits": "^1.0.5",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "react-i18next": "^15.4.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.21.0",

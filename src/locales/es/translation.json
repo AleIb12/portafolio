@@ -1,0 +1,95 @@
+{
+  "navigation": {
+    "home": "Inicio",
+    "about": "Sobre mí",
+    "skills": "Habilidades",
+    "projects": "Proyectos",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "title": "Alisha",
+    "subtitle": "Desarrolladora Web | Programadora | Entusiasta de la Tecnología",
+    "cta": "Contáctame",
+    "cv": {
+      "title": "¿Quieres saber más sobre mí?",
+      "description": "Descarga mi currículum completo para conocer más sobre mi formación, experiencia y habilidades.",
+      "button": "Descargar CV"
+    }
+  },
+  "about": {
+    "title": "Sobre Mí",
+    "intro": "Profesional joven, motivada y entusiasta en busca de oportunidades para iniciar y desarrollar su carrera.",
+    "cards": {
+      "technical": {
+        "title": "Conocimientos técnicos",
+        "description": "Nivel intermedio en Java, PHP, SQL y JavaScript, con experiencia en proyectos prácticos y aplicaciones web funcionales."
+      },
+      "passion": {
+        "title": "Pasión por la tecnología",
+        "description": "Apasionada por la tecnología y con ganas de aplicar conocimientos teóricos y habilidades prácticas para contribuir al éxito de organizaciones innovadoras."
+      },
+      "learning": {
+        "title": "Aprendizaje rápido",
+        "description": "Gran capacidad de adaptación y aprendizaje rápido, con excelente desempeño en entornos de trabajo dinámicos y cambiantes."
+      },
+      "problem": {
+        "title": "Resolución de problemas",
+        "description": "Habilidad para la resolución de problemas y pensamiento crítico para afrontar desafíos con creatividad y eficiencia."
+      },
+      "communication": {
+        "title": "Comunicación efectiva",
+        "description": "Excelentes habilidades de comunicación, tanto escrita como verbal, y facilidad para el trabajo en equipo y colaboración."
+      }
+    }
+  },
+  "skills": {
+    "title": "Mis Habilidades",
+    "categories": {
+      "programming": "Lenguajes de Programación",
+      "technical": "Habilidades Técnicas",
+      "soft": "Habilidades Blandas"
+    },
+    "skills": {
+      "communication": "Comunicación",
+      "teamwork": "Trabajo en equipo",
+      "adaptability": "Adaptabilidad",
+      "problemSolving": "Resolución de problemas",
+      "databases": "Bases de Datos",
+      "git": "Git"
+    }
+  },
+  "projects": {
+    "title": "Mis Proyectos",
+    "viewProject": "Ver proyecto",
+    "viewCode": "Ver código",
+    "items": {
+      "pokemon": {
+        "title": "Galería de Cartas Pokémon",
+        "description": "Aplicación web para visualizar y explorar una colección de cartas Pokémon con detalles y características de cada una."
+      },
+      "piano": {
+        "title": "Piano Virtual Interactivo",
+        "description": "Un piano virtual completamente funcional desarrollado con React, que permite tocar melodías utilizando el teclado o el ratón."
+      },
+      "chat": {
+        "title": "Chat en Tiempo Real",
+        "description": "Aplicación de chat desarrollada en Java utilizando sockets para comunicación en tiempo real entre múltiples usuarios."
+      }
+    }
+  },
+  "contact": {
+    "title": "Contáctame",
+    "form": {
+      "name": "Nombre",
+      "email": "Correo electrónico",
+      "message": "Mensaje",
+      "submit": "Enviar mensaje"
+    }
+  },
+  "footer": {
+    "copyright": "© {{year}} Alisha Ibarra - Todos los derechos reservados"
+  },
+  "languageSwitcher": {
+    "selectLanguage": "Seleccionar idioma"
+  }
+}
