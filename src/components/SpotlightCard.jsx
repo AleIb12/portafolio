@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import AlishaCV from '../assets/Alisha.pdf'; // Importar el PDF del CV
+import AlishaCV from '../assets/Alishacv.pdf'; // Corregido el nombre del archivo PDF
 
 // Componente SpotlightCard usando patrones de React Bits:
 // - UseRef para referencias DOM
@@ -19,6 +19,7 @@ const SpotlightCard = ({
   ...props 
 }) => {
   const cardRef = useRef(null);
+  const iframeRef = useRef(null);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isHovered, setIsHovered] = useState(false);
   const [isPdfOpen, setIsPdfOpen] = useState(false);
@@ -26,6 +27,7 @@ const SpotlightCard = ({
   const [scale, setScale] = useState(1.0);
   const [isLoading, setIsLoading] = useState(true);
   const [totalPages, setTotalPages] = useState(null);
+  const [zoomChanging, setZoomChanging] = useState(false);
   
   // Actualizar posición del mouse cuando se mueve dentro de la tarjeta
   const handleMouseMove = (e) => {
@@ -80,17 +82,20 @@ const SpotlightCard = ({
     setCurrentPage(prev => Math.min(prev + 1, totalPages || 999));
   };
 
-  // Zoom del PDF
+  // Zoom del PDF mejorado para evitar recargas infinitas
   const zoomIn = () => {
+    setZoomChanging(true);
     setScale(prev => Math.min(prev + 0.2, 2.5));
   };
 
   const zoomOut = () => {
+    setZoomChanging(true);
     setScale(prev => Math.max(prev - 0.2, 0.5));
   };
 
   // Resetear zoom
   const resetZoom = () => {
+    setZoomChanging(true);
     setScale(1.0);
   };
   
@@ -106,6 +111,53 @@ const SpotlightCard = ({
     transition: 'opacity 0.15s ease',
     pointerEvents: 'none',
   };
+
+  // Efecto para actualizar el iframe cuando cambia el zoom o la página
+  useEffect(() => {
+    if (isPdfOpen && iframeRef.current) {
+      if (zoomChanging) {
+        // Solo mostrar indicador de carga durante cambios de zoom
+        setIsLoading(true);
+        
+        try {
+          // Usar postMessage para cambiar el zoom si está disponible (más eficiente)
+          const iframe = iframeRef.current;
+          const pdfViewerApp = iframe.contentWindow?.PDFViewerApplication;
+          
+          if (pdfViewerApp && pdfViewerApp.pdfViewer) {
+            // Intentar usar API interna del visor de PDF si está disponible
+            pdfViewerApp.pdfViewer.currentScale = scale;
+            setTimeout(() => {
+              setIsLoading(false);
+              setZoomChanging(false);
+            }, 500);
+          } else {
+            // Caer en el enfoque de actualizar src si la API no está disponible
+            const newSrc = `${pdfUrl}#page=${currentPage}&view=FitH&zoom=${scale}`;
+            iframe.src = newSrc;
+          }
+        } catch (error) {
+          console.log("Error al aplicar zoom:", error);
+          // Si falla, actualizar src como fallback
+          const newSrc = `${pdfUrl}#page=${currentPage}&view=FitH&zoom=${scale}`;
+          iframeRef.current.src = newSrc;
+        }
+      } else if (currentPage) {
+        // Para cambios de página, usar un enfoque más ligero
+        try {
+          const iframe = iframeRef.current;
+          // Intentar usar API para cambiar de página
+          const pdfViewerApp = iframe.contentWindow?.PDFViewerApplication;
+          
+          if (pdfViewerApp && pdfViewerApp.page !== currentPage) {
+            pdfViewerApp.page = currentPage;
+          }
+        } catch (error) {
+          // Ignorar silenciosamente
+        }
+      }
+    }
+  }, [scale, currentPage, isPdfOpen, pdfUrl, zoomChanging]);
 
   // Efecto para detectar el número total de páginas
   useEffect(() => {
@@ -423,6 +475,7 @@ const SpotlightCard = ({
             {/* Visor de PDF con iframe */}
             <iframe
               id="pdf-viewer"
+              ref={iframeRef}
               src={`${pdfUrl}#page=${currentPage}&view=FitH&zoom=${scale}`}
               style={{
                 width: '100%',
@@ -431,8 +484,15 @@ const SpotlightCard = ({
               }}
               title="Visor de CV"
               onLoad={() => {
-                // Dar tiempo para que se cargue el PDF completamente
-                setTimeout(() => setIsLoading(false), 1000);
+                // Solo cuando se carga inicialmente o si realmente hubo un cambio en la fuente
+                if (!zoomChanging) {
+                  // Dar tiempo para que se cargue el PDF completamente
+                  setTimeout(() => setIsLoading(false), 1000);
+                } else {
+                  // Si estamos cambiando el zoom, limpiar el estado
+                  setZoomChanging(false);
+                  setTimeout(() => setIsLoading(false), 500);
+                }
               }}
             />
           </div>
