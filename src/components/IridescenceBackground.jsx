@@ -45,16 +45,16 @@ const fragmentShader = `
     return 130.0 * dot(m, g);
   }
   
-  // Función para generar colores iridiscentes
+  // Función para generar colores iridiscentes con un tema más oscuro
   vec3 iridescence(float angle, float intensity) {
-    // Colores bases de React Bits
-    vec3 color1 = vec3(0.24, 0.27, 0.90);  // Azul React Bits (#4F46E5)
-    vec3 color2 = vec3(0.56, 0.39, 0.94);  // Púrpura (#8E64EE)
-    vec3 color3 = vec3(0.31, 0.75, 0.90);  // Azul claro (#4FBFE6)
+    // Nuevos colores más oscuros
+    vec3 color1 = vec3(0.10, 0.12, 0.20);  // Azul oscuro
+    vec3 color2 = vec3(0.20, 0.15, 0.30);  // Púrpura oscuro
+    vec3 color3 = vec3(0.08, 0.10, 0.18);  // Casi negro azulado
     
-    float t1 = cos(angle + u_time * 0.5) * 0.5 + 0.5;
-    float t2 = cos(angle + u_time * 0.5 + 2.094) * 0.5 + 0.5;
-    float t3 = cos(angle + u_time * 0.5 + 4.188) * 0.5 + 0.5;
+    float t1 = cos(angle + u_time * 0.3) * 0.5 + 0.5;
+    float t2 = cos(angle + u_time * 0.3 + 2.094) * 0.5 + 0.5;
+    float t3 = cos(angle + u_time * 0.3 + 4.188) * 0.5 + 0.5;
     
     return mix(mix(color1, color2, t1), color3, t2) * intensity;
   }
@@ -68,11 +68,11 @@ const fragmentShader = `
     float dist = length(uv - center);
     
     // Crear variaciones usando ruido
-    float noise_val = snoise(uv * 3.0 + u_time * 0.1) * 0.5 + 0.5;
+    float noise_val = snoise(uv * 2.5 + u_time * 0.08) * 0.5 + 0.5;
     float angle = atan(uv.y - center.y, uv.x - center.x);
     
-    // Generar patrón de ondas
-    float waves = sin(dist * 20.0 - u_time * 0.5) * 0.5 + 0.5;
+    // Generar patrón de ondas más sutiles
+    float waves = sin(dist * 15.0 - u_time * 0.3) * 0.5 + 0.5;
     
     // Influencia del mouse
     vec2 mouseNorm = u_mouse / u_resolution;
@@ -80,11 +80,11 @@ const fragmentShader = `
     float mouseInfluence = smoothstep(0.5, 0.0, mouseDist);
     
     // Combinar efectos
-    vec3 baseColor = vec3(0.05, 0.05, 0.1); // Color oscuro de fondo
-    vec3 iridColor = iridescence(angle + noise_val * 2.0, 1.0);
+    vec3 baseColor = vec3(0.03, 0.03, 0.05); // Negro azulado profundo
+    vec3 iridColor = iridescence(angle + noise_val * 1.5, 1.0);
     
     // Ajustar intensidad basado en ondas y mouse
-    float intensity = waves * 0.3 + mouseInfluence * 0.7 + 0.2;
+    float intensity = waves * 0.25 + mouseInfluence * 0.5 + 0.15;
     vec3 finalColor = mix(baseColor, iridColor, intensity);
     
     // Suavizar bordes

@@ -8,7 +8,7 @@ const BounceCard = ({
   title,
   description,
   icon,
-  color = '#4f46e5', // Color principal predeterminado (indigo)
+  color = '#ffffff', // Color principal predeterminado cambiado a blanco para mejor contraste
   iconBgColor, // Color de fondo para el icono (opcional)
   className = '',
   style = {},
@@ -59,11 +59,13 @@ const BounceCard = ({
           ? 'transform 0.1s ease-out' 
           : 'transform 0.5s ease-out',
         position: 'relative',
-        backgroundColor: 'white',
-        borderRadius: '12px',
+        backgroundColor: 'rgba(25, 25, 35, 0.6)', // Cambio a fondo oscuro semitransparente
+        borderRadius: '16px',
+        backdropFilter: 'blur(10px)',
+        border: '1px solid rgba(255, 255, 255, 0.1)',
         boxShadow: isHovered 
-          ? `0 20px 25px -5px rgba(0, 0, 0, 0.15), 0 10px 10px -5px rgba(0, 0, 0, 0.1), 0 0 0 2px ${color}30` 
-          : '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+          ? `0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2), 0 0 0 2px rgba(255, 255, 255, 0.2)` 
+          : '0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 2px 4px -1px rgba(0, 0, 0, 0.1)',
         ...style,
       }}
     >
@@ -76,8 +78,8 @@ const BounceCard = ({
           left: 0,
           right: 0,
           bottom: 0,
-          borderRadius: '12px',
-          background: `radial-gradient(circle at ${50 + position.x * 30}% ${50 + position.y * 30}%, ${color}20 0%, transparent 70%)`,
+          borderRadius: '16px',
+          background: `radial-gradient(circle at ${50 + position.x * 30}% ${50 + position.y * 30}%, rgba(255, 255, 255, 0.15) 0%, transparent 70%)`,
           opacity,
           transition: 'opacity 0.3s ease-out',
           pointerEvents: 'none',
@@ -97,11 +99,12 @@ const BounceCard = ({
             width: '48px',
             height: '48px',
             borderRadius: '50%',
-            backgroundColor: iconBgColor || `${color}20`,
+            backgroundColor: iconBgColor || `rgba(255, 255, 255, 0.1)`,
             color: color,
             marginBottom: '1rem',
-            transition: 'transform 0.3s ease',
+            transition: 'transform 0.3s ease, box-shadow 0.3s ease',
             transform: isHovered ? 'scale(1.1) translateY(-2px)' : 'scale(1)',
+            boxShadow: isHovered ? '0 5px 15px rgba(0, 0, 0, 0.2)' : 'none',
           }}
         >
           {icon}
@@ -112,10 +115,11 @@ const BounceCard = ({
           style={{
             fontSize: '1.125rem',
             fontWeight: 600,
-            color: '#1f2937', // gris oscuro
+            color: 'rgba(255, 255, 255, 0.95)', // Cambio a blanco con alta opacidad
             marginBottom: '0.75rem',
             transition: 'transform 0.2s ease',
             transform: isHovered ? 'translateY(-2px)' : 'translateY(0)',
+            letterSpacing: '-0.01em',
           }}
         >
           {title}
@@ -125,8 +129,8 @@ const BounceCard = ({
         <p
           style={{
             fontSize: '0.875rem',
-            color: '#6b7280', // gris medio
-            lineHeight: 1.5,
+            color: 'rgba(255, 255, 255, 0.75)', // Cambio a blanco con media opacidad
+            lineHeight: 1.6,
             transition: 'transform 0.3s ease',
             transform: isHovered ? 'translateY(-1px)' : 'translateY(0)',
           }}

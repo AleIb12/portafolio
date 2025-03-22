@@ -11,10 +11,10 @@ const SpotlightCard = ({
   title, 
   description, 
   buttonText = 'Ver CV',
-  pdfUrl = AlishaCV, // Usar el PDF importado como valor predeterminado
+  buttonLink = AlishaCV, // Usar el PDF importado como valor predeterminado
   icon,
-  bgColor = '#1e293b',
-  spotlightColor = 'rgba(79, 70, 229, 0.2)',
+  bgColor = 'rgba(255, 255, 255, 0.04)', // Fondo más claro para contraste
+  spotlightColor = 'rgba(255, 255, 255, 0.07)', // Spotlight más sutil
   className = '',
   ...props 
 }) => {
@@ -133,13 +133,13 @@ const SpotlightCard = ({
             }, 500);
           } else {
             // Caer en el enfoque de actualizar src si la API no está disponible
-            const newSrc = `${pdfUrl}#page=${currentPage}&view=FitH&zoom=${scale}`;
+            const newSrc = `${buttonLink}#page=${currentPage}&view=FitH&zoom=${scale}`;
             iframe.src = newSrc;
           }
         } catch (error) {
           console.log("Error al aplicar zoom:", error);
           // Si falla, actualizar src como fallback
-          const newSrc = `${pdfUrl}#page=${currentPage}&view=FitH&zoom=${scale}`;
+          const newSrc = `${buttonLink}#page=${currentPage}&view=FitH&zoom=${scale}`;
           iframeRef.current.src = newSrc;
         }
       } else if (currentPage) {
@@ -157,7 +157,7 @@ const SpotlightCard = ({
         }
       }
     }
-  }, [scale, currentPage, isPdfOpen, pdfUrl, zoomChanging]);
+  }, [scale, currentPage, isPdfOpen, buttonLink, zoomChanging]);
 
   // Efecto para detectar el número total de páginas
   useEffect(() => {
@@ -201,12 +201,14 @@ const SpotlightCard = ({
           alignItems: 'center',
           textAlign: 'center',
           boxShadow: isHovered 
-            ? '0 25px 50px -12px rgba(0, 0, 0, 0.4)' 
-            : '0 10px 30px -15px rgba(0, 0, 0, 0.3)',
+            ? '0 25px 50px -12px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.1)' 
+            : '0 10px 30px -15px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.05)',
           transition: 'transform 0.2s ease, box-shadow 0.2s ease',
           transform: isHovered ? 'translateY(-5px)' : 'translateY(0px)',
           maxWidth: '400px',
           width: '100%',
+          backdropFilter: 'blur(8px)',
+          border: '1px solid rgba(255, 255, 255, 0.05)',
           ...props.style,
         }}
         {...props}
@@ -221,44 +223,52 @@ const SpotlightCard = ({
         
         <h3 style={{ 
           marginBottom: '1rem', 
-          color: 'white', 
+          color: 'rgba(255, 255, 255, 0.95)', 
           fontSize: '1.5rem',
           fontWeight: 'bold',
           position: 'relative',
-          zIndex: 2
+          zIndex: 2,
+          background: 'linear-gradient(90deg, #ffffff, #dddddd)',
+          WebkitBackgroundClip: 'text',
+          WebkitTextFillColor: 'transparent',
+          letterSpacing: '-0.02em'
         }}>
           {title}
         </h3>
         
         <p style={{ 
           marginBottom: '2rem', 
-          color: 'rgba(255, 255, 255, 0.7)',
+          color: 'rgba(255, 255, 255, 0.8)',
           fontSize: '1rem',
           position: 'relative',
-          zIndex: 2
+          zIndex: 2,
+          lineHeight: '1.6'
         }}>
           {description}
         </p>
         
         <button 
-          onClick={handleOpenPdf}
+          onClick={() => window.open(buttonLink, '_blank')}
           style={{
             display: 'inline-flex',
             alignItems: 'center',
             justifyContent: 'center',
-            backgroundColor: 'rgba(79, 70, 229, 1)',
-            color: 'white',
+            background: 'linear-gradient(90deg, rgba(255, 255, 255, 0.95), rgba(230, 230, 230, 0.9))',
+            color: '#111',
             padding: '0.75rem 1.5rem',
             borderRadius: '0.5rem',
-            fontWeight: '500',
+            fontWeight: '600',
             border: 'none',
             cursor: 'pointer',
             textDecoration: 'none',
-            transition: 'transform 0.2s ease, background-color 0.2s ease',
+            transition: 'transform 0.2s ease, box-shadow 0.2s ease',
             transform: isHovered ? 'scale(1.05)' : 'scale(1)',
             position: 'relative',
             zIndex: 2,
-            marginTop: 'auto'
+            marginTop: 'auto',
+            boxShadow: isHovered 
+              ? '0 10px 25px -5px rgba(0, 0, 0, 0.3)' 
+              : '0 4px 6px -1px rgba(0, 0, 0, 0.1)'
           }}
         >
           {buttonText}
@@ -476,7 +486,7 @@ const SpotlightCard = ({
             <iframe
               id="pdf-viewer"
               ref={iframeRef}
-              src={`${pdfUrl}#page=${currentPage}&view=FitH&zoom=${scale}`}
+              src={`${buttonLink}#page=${currentPage}&view=FitH&zoom=${scale}`}
               style={{
                 width: '100%',
                 height: '100%',
@@ -509,7 +519,7 @@ const SpotlightCard = ({
             }}
           >
             <a
-              href={pdfUrl}
+              href={buttonLink}
               download
               style={{
                 backgroundColor: 'rgba(79, 70, 229, 1)',
@@ -531,7 +541,7 @@ const SpotlightCard = ({
               Descargar CV
             </a>
             <button
-              onClick={() => window.open(pdfUrl, '_blank')}
+              onClick={() => window.open(buttonLink, '_blank')}
               style={{
                 backgroundColor: 'rgba(255, 255, 255, 0.2)',
                 color: 'white',

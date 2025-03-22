@@ -1,6 +1,6 @@
 # Portfolio React + Vite
 
-Este es un portafolio moderno y dinámico construido con React y Vite, que presenta efectos visuales avanzados y componentes interactivos.
+Este es un portafolio moderno y dinámico construido con React y Vite, que presenta efectos visuales avanzados y componentes interactivos, con un diseño de tema oscuro elegante y de alto contraste.
 
 ## ✨ Características
 
@@ -13,6 +13,17 @@ Este es un portafolio moderno y dinámico construido con React y Vite, que prese
 - 🚀 Optimización de rendimiento
 - 🎭 Efectos de glassmorphism
 - 📄 Visor de PDF integrado con controles avanzados
+- 🌙 Tema oscuro elegante con gradientes y alto contraste
+
+## 🎨 Diseño y Tema
+
+El portafolio utiliza un sofisticado tema oscuro con:
+
+- Gradiente de fondo negro azulado con sutiles efectos iridiscentes
+- Tipografía de alto contraste con gradientes blanco-gris
+- Tarjetas con efecto glassmorphism y bordes sutiles
+- Componentes interactivos adaptados al tema oscuro
+- Efectos visuales que complementan la atmósfera elegante
 
 ## 🛠 Tecnologías Utilizadas
 
@@ -23,6 +34,7 @@ Este es un portafolio moderno y dinámico construido con React y Vite, que prese
 - PostCSS
 - React Hooks avanzados
 - Intersection Observer API
+- WebGL Shaders personalizados
 
 ## 🚀 Inicio Rápido
 
@@ -56,6 +68,8 @@ src/
   │   ├── Dock.jsx
   │   ├── GlassIcon.jsx
   │   ├── IridescenceBackground.jsx
+  │   ├── LanguageSwitcher.jsx
+  │   ├── MagicCard.jsx
   │   ├── ProjectCard.jsx
   │   ├── ScrollReveal.jsx
   │   ├── SkillBar.jsx
@@ -63,7 +77,13 @@ src/
   ├── assets/              # Recursos estáticos
   │   ├── Alisha.pdf      # CV en formato PDF
   │   └── react.svg       # Otros recursos
+  ├── locales/            # Archivos de internacionalización
+  │   ├── de/             # Alemán
+  │   ├── en/             # Inglés
+  │   └── es/             # Español
   ├── App.jsx             # Componente principal
+  ├── BentoLayout.css     # Estilos para el layout tipo Bento
+  ├── i18n.js             # Configuración de internacionalización
   └── main.jsx            # Punto de entrada
 ```
 
@@ -72,15 +92,13 @@ src/
 ### Fondos Animados
 - **AnimatedBackground**: Sistema de partículas interactivas
 - **AuroraBackground**: Efecto aurora boreal animado con Canvas
-- **IridescenceBackground**: Efecto iridiscente avanzado con shaders WebGL
+- **IridescenceBackground**: Efecto iridiscente avanzado con shaders WebGL y gradientes oscuros
 
 ### Componentes UI
-- **BounceCard**: Tarjetas con efecto de rebote, rotación 3D y resplandor
-- **SpotlightCard**: Tarjetas con efecto spotlight y visor de PDF integrado
+- **BounceCard**: Tarjetas con efecto de rebote, rotación 3D y resplandor, adaptadas al tema oscuro
+- **SpotlightCard**: Tarjetas con efecto spotlight y visor de PDF integrado, con contraste optimizado
 - **GlassIcon**: Iconos con efecto glassmorphism y efectos de brillo
-- **ScrollReveal**: Sistema de animaciones al scroll con múltiples efectos:
-  - FadeIn, SlideUp, SlideRight, SlideLeft, ScaleIn, FlipIn
-  - ScrollRevealGroup para animar elementos en secuencia
+- **Dock**: Barra de navegación estilo macOS con efectos de hover y animaciones suaves
 
 ## 🔍 Características Detalladas
 
