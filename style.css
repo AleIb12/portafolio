@@ -1,0 +1,300 @@
+/* Estilos base y reseteo */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Quicksand', sans-serif; /* Fuente principal limpia */
+    line-height: 1.6;
+    background-color: #fff0f5; /* Fondo rosa muy pálido (Lavender Blush) */
+    color: #5c5c5c; /* Color de texto principal oscuro pero suave */
+    padding: 20px;
+}
+
+h1, h2, h3 {
+    font-family: 'Pacifico', cursive; /* Fuente decorativa "cute" para títulos */
+    color: #ff69b4; /* Rosa fuerte (Hot Pink) para títulos */
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-size: 3em;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+header p {
+    text-align: center;
+    font-size: 1.2em;
+    color: #8a8a8a; /* Gris suave para el subtítulo */
+    margin-bottom: 20px;
+}
+
+/* Navegación */
+nav ul {
+    list-style: none;
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 0; /* Asegurar que no haya padding extra */
+}
+
+nav ul li {
+    display: inline-block; /* Cambiado a inline-block para mejor control */
+    margin: 5px 5px; /* Espacio entre botones */
+}
+
+nav ul li a {
+    display: inline-block; /* Para aplicar padding y background */
+    text-decoration: none;
+    color: #ffffff; /* Texto blanco */
+    font-weight: bold;
+    background-color: #ffb6c1; /* Rosa claro como fondo del botón */
+    padding: 8px 18px; /* Padding interno del botón */
+    border-radius: 20px; /* Bordes redondeados para efecto píldora */
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease; /* Añadir transiciones */
+}
+
+nav ul li a:hover {
+    background-color: #ff85c1; /* Rosa un poco más oscuro al pasar el ratón */
+    color: #ffffff; /* Mantener texto blanco o cambiar a #ffebf0 si se prefiere */
+    transform: translateY(-2px); /* Elevar ligeramente */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil al elevar */
+}
+
+/* Contenido principal y secciones */
+main {
+    max-width: 900px;
+    margin: 0 auto; /* Centrar contenido */
+    background-color: #ffffff; /* Fondo blanco para el contenido */
+    padding: 30px;
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    position: relative; /* Necesario para posicionar elementos hijos absolutos */
+    overflow: hidden; /* Para asegurar que el osito no se salga */
+}
+
+/* Estilos específicos para la sección Sobre Mí */
+#sobre-mi {
+    background-color: #fffafc; /* Un rosa aún más pálido, casi blanco */
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 3px 6px rgba(255, 182, 193, 0.3); /* Sombra rosa claro suave */
+    border: 1px solid #ffe4e1; /* Borde Misty Rose */
+    margin-bottom: 35px; /* Un poco más de margen inferior */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición para hover */
+    position: relative; /* Asegurarse de que tiene posición relativa */
+    overflow: hidden; /* Para contener el osito si se ajusta mal */
+}
+
+#sobre-mi::before { 
+    content: '';
+    display: block;
+    width: 45px; /* Ajustar tamaño si es necesario */
+    height: 45px; /* Ajustar tamaño si es necesario */
+    /* SVG de un osito simple */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='60' r='35' fill='%23ffb6c1'/%3E%3Ccircle cx='30' cy='30' r='15' fill='%23ffb6c1'/%3E%3Ccircle cx='70' cy='30' r='15' fill='%23ffb6c1'/%3E%3Ccircle cx='40' cy='55' r='4' fill='%23ffffff'/%3E%3Ccircle cx='60' cy='55' r='4' fill='%23ffffff'/%3E%3Ccircle cx='50' cy='65' r='5' fill='%23ff85c1'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 10px; /* Ajustar posición dentro de la caja */
+    right: 10px; /* Ajustar posición dentro de la caja */
+    opacity: 0.7; 
+    z-index: 0; 
+}
+
+#sobre-mi:hover {
+    transform: translateY(-5px); /* Levantar ligeramente */
+    box-shadow: 0 6px 12px rgba(255, 105, 180, 0.3); /* Sombra Hot Pink más pronunciada */
+}
+
+section {
+    margin-bottom: 30px;
+    animation: fadeInUp 0.6s ease-out forwards; /* Aplicar animación */
+    /* Opcional: Añadir un pequeño retraso escalonado si se desea */
+    /* animation-delay: calc(0.1s * var(--section-index, 1)); */ /* Requeriría añadir --section-index en HTML */
+}
+
+/* Re-aplicar borde inferior a las otras secciones si se quitó de 'section' */
+section:not(#sobre-mi) {
+    padding-bottom: 20px;
+    border-bottom: 1px dashed #ffb6c1;
+}
+
+section:last-child {
+    border-bottom: none;
+}
+
+section h2 {
+    font-size: 2em;
+    border-bottom: 2px solid #ffb6c1; /* Línea sólida bajo títulos de sección */
+    padding-bottom: 5px;
+    display: inline-block; /* Para que el borde solo ocupe el ancho del texto */
+}
+
+/* Listas */
+ul {
+    list-style: none; /* Quitar puntos por defecto */
+    padding-left: 0;
+}
+
+#habilidades ul li {
+    background-color: #ffebf0; /* Fondo rosa muy pálido para items de habilidad */
+    margin-bottom: 8px;
+    padding: 10px 15px;
+    border-radius: 15px; /* Bordes redondeados */
+    color: #ff69b4; /* Texto rosa fuerte */
+    font-weight: 500;
+    display: inline-block; /* Para que se ajusten al contenido */
+    margin-right: 10px;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Añadir transición */
+}
+
+#habilidades ul li:hover {
+    background-color: #ffc1cc; /* Un rosa ligeramente diferente al pasar el ratón */
+    transform: translateY(-2px); /* Levantar ligeramente al pasar el ratón */
+}
+
+/* Artículos (Formación, Experiencia, Certificaciones) */
+article {
+    margin-bottom: 15px;
+}
+
+/* Estilos para desplegables <details> y <summary> */
+details {
+    background-color: #fff7f9; /* Fondo rosa muy muy pálido */
+    border: 1px solid #ffdde5;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    overflow: hidden; /* Para que el borde redondeado funcione bien */
+}
+
+details summary {
+    padding: 10px 15px;
+    cursor: pointer;
+    outline: none;
+    list-style: none; /* Quitar el marcador por defecto */
+    position: relative;
+    background-color: #ffe4e1; /* Misty Rose - un poco más oscuro que details */
+    transition: background-color 0.2s ease;
+}
+
+details summary:hover {
+    background-color: #ffdade; /* Un poco más oscuro al pasar el ratón */
+}
+
+details summary h3 {
+    display: inline; /* Para que el icono quede al lado */
+    margin-bottom: 0; /* Quitar margen inferior del h3 dentro del summary */
+    font-size: 1.3em; /* Ajustar tamaño si es necesario */
+    color: #ff69b4; /* Mantener color del título */
+}
+
+/* Indicador +/- */
+details summary::before {
+    content: '+';
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #ff69b4;
+}
+
+details[open] summary::before {
+    content: '−'; /* Cambiar a menos cuando está abierto */
+}
+
+/* Contenido dentro del desplegable */
+details > *:not(summary) {
+    padding: 10px 15px 15px 15px; /* Padding para el contenido */
+}
+
+/* Quitar margen inferior del último párrafo dentro de details */
+details > p:last-child {
+    margin-bottom: 0;
+}
+
+/* Ajustar estilos de article si aún se usan en otras secciones */
+
+article h3 {
+    font-size: 1.4em;
+    color: #ff85c1; /* Rosa un poco más oscuro */
+    margin-bottom: 5px;
+}
+
+article p {
+    margin-bottom: 5px;
+    color: #666;
+}
+
+/* Enlaces */
+a {
+    color: #ff69b4; /* Enlaces en rosa fuerte */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #ff1493; /* Rosa más intenso (Deep Pink) al pasar el ratón */
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #ffb6c1; /* Línea superior */
+    color: #8a8a8a;
+}
+
+/* Estilos adicionales para hacerlo más "cute" */
+body::before { /* Pequeño detalle decorativo */
+    content: '🌸';
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    font-size: 2em;
+    opacity: 0.5;
+}
+
+body::after { /* Otro detalle */
+    content: '💖';
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    font-size: 2em;
+    opacity: 0.5;
+}
+
+/* Puedes añadir más elementos como imágenes de fondo sutiles,
+   iconos, o animaciones si lo deseas */
+
+/* Animación de entrada para secciones */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Media Queries para Responsividad (Ejemplo básico) */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2.5em;
+    }
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+    main {
+        padding: 20px;
+    }
+}
