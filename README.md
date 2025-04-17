@@ -2,7 +2,7 @@
 
 ¡Holi! (≧∇≦)/ ¡Bienvenid@ al rinconcito web súper cuqui de Alisha! 💖
 
-Este es un portafolio personal hecho con mucho amor <3, usando HTML y CSS sencillitos pero bonitos. Está diseñado para mostrar todas las cositas geniales que Alisha sabe hacer: sus habilidades 💫, su formación 🎓 y su experiencia 💼.
+Este es un portafolio personal hecho con mucho amor <3, usando HTML, CSS y un poquito de JavaScript. Está diseñado para mostrar todas las cositas geniales que Alisha sabe hacer: sus habilidades 💫, su formación 🎓, su experiencia 💼 y sus proyectos adorables 🚀.
 
 ## ✨ Cositas Especiales ✨
 
@@ -13,16 +13,22 @@ Este es un portafolio personal hecho con mucho amor <3, usando HTML y CSS sencil
     -   Formación 🎓 (¡Dónde estudió!)
     -   Experiencia 💼 (¡Dónde trabajó!)
     -   Certificaciones 📜 (¡Sus logros!)
+    -   Proyectos 🚀 (¡Sus creaciones mágicas!)
     -   Contacto 📧 (¡Para decirle hola!)
 -   ✒️ ¡Letras bonitas! Usamos 'Quicksand' y 'Pacifico' de Google Fonts para que todo se vea más dulce.
 -   🖱️ ¡Pequeños brillitos! Efectos suaves cuando pasas el ratón por los enlaces.
 -   📱 ¡Se ve bien en todas partes! Se adapta un poquito a diferentes pantallas.
 -   🌸 ¡Detalles encantadores! Emojis y cositas lindas por aquí y por allá.
+-   🃏 ¡Tarjetas de proyectos kawaii! Con efecto de apilado (stack) y animaciones al pasar el ratón.
+-   🎛️ ¡Sistema de acordeón mágico! Los proyectos pueden expandirse y contraerse para ver más detalles.
+-   🏷️ ¡Etiquetas de tecnologías! Para mostrar qué herramientas se usaron en cada proyecto.
 
 ## 🛠️ Herramientas Mágicas Usadas 🛠️
 
 -   HTML5 (¡La estructura!)
 -   CSS3 (¡La magia del estilo!)
+-   JavaScript (¡Para la interactividad de los proyectos!)
+-   Google Fonts (¡Para letras adorables!)
 
 ## 🚀 ¿Cómo Ver Esta Maravilla? 🚀
 
@@ -34,6 +40,8 @@ Este es un portafolio personal hecho con mucho amor <3, usando HTML y CSS sencil
 .
 ├── index.html      # ¡La página principal! ✨
 ├── style.css       # ¡Los polvos mágicos del estilo! 🎨
+├── scripts.js      # ¡La varita mágica para la interactividad! ✨
+├── vercel.json     # ¡Configuración para el despliegue! 🚀
 └── README.md       # ¡Estás aquí! 👋
 ```
 

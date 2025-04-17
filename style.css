@@ -285,16 +285,171 @@ body::after { /* Otro detalle */
     }
 }
 
+/* Estilos mejorados para las tarjetas de proyecto */
+.project-card {
+    background-color: #fffafc; /* Rosa muy pálido, similar a Sobre Mí */
+    border: 1px solid #ffe4e1; /* Borde Misty Rose */
+    border-radius: 15px; /* Bordes redondeados */
+    padding: 25px;
+    margin-bottom: -80px; /* Margen negativo para solapar verticalmente */
+    box-shadow: 0 4px 8px rgba(255, 182, 193, 0.4); /* Sombra rosa claro */
+    transition: transform 0.4s ease, box-shadow 0.4s ease, margin-bottom 0.4s ease, z-index 0s 0.4s; /* Ajustar transiciones */
+    overflow: hidden; /* Para contener elementos internos */
+    position: relative; /* Necesario para z-index y transform */
+    z-index: 1; /* Base z-index */
+    transform-origin: bottom center; /* Punto de rotación/escala */
+}
+
+/* Sistema de acordeón para los detalles de proyectos */
+.project-summary {
+    font-size: 1.05em;
+    margin-bottom: 15px;
+    color: #5c5c5c;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.tag {
+    background-color: #ffebf0;
+    color: #ff69b4;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.85em;
+    font-weight: 600;
+    box-shadow: 0 2px 4px rgba(255, 182, 193, 0.2);
+    transition: all 0.3s ease;
+}
+
+.tag:hover {
+    background-color: #ffd3e0;
+    transform: translateY(-2px);
+    box-shadow: 0 3px 5px rgba(255, 105, 180, 0.25);
+}
+
+.project-details-btn {
+    background-color: #ff85c1;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+    font-size: 0.9em;
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 5px rgba(255, 105, 180, 0.2);
+}
+
+.project-details-btn:hover {
+    background-color: #ff69b4;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(255, 105, 180, 0.3);
+}
+
+.project-details {
+    display: none; /* Oculto por defecto */
+    padding-top: 10px;
+    border-top: 1px dashed #ffb6c1;
+    animation: fadeIn 0.5s ease;
+}
+
+.project-details.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Estilos para crear el efecto stack con múltiples tarjetas */
+#proyectos {
+    padding-bottom: 100px; /* Añadir espacio extra al final para la última tarjeta */
+    position: relative; /* Needed for z-index stacking context */
+}
+
+/* Apply base z-index based on order */
+.project-card:nth-child(1) { z-index: 3; }
+.project-card:nth-child(2) { z-index: 2; }
+.project-card:nth-child(3) { z-index: 1; }
+/* Add more if needed, decreasing z-index */
+
+
+/* Apply slight transformations for visual stacking */
+.project-card:nth-child(1) {
+    /* Top card, no initial transform needed or slight */
+     transform: translateX(0px) rotate(0deg);
+}
+
+.project-card:nth-child(2) {
+    transform: translateX(5px) rotate(1deg) scale(0.98); /* Slightly smaller and rotated */
+    margin-top: -15px; /* Adjust overlap */
+}
+
+.project-card:nth-child(3) {
+    transform: translateX(-5px) rotate(-1deg) scale(0.96); /* Even smaller and rotated other way */
+     margin-top: -30px; /* Adjust overlap more */
+}
+/* Add more :nth-child rules if you have more projects, adjusting transform and margin-top */
+
+
+/* Efecto al pasar el ratón sobre una tarjeta */
+.project-card:hover {
+    transform: translateY(-15px) scale(1.03) rotate(0deg); /* Levantar, escalar y enderezar */
+    box-shadow: 0 10px 20px rgba(255, 105, 180, 0.5); /* Sombra más pronunciada */
+    margin-bottom: 20px; /* Restaurar/ajustar margen inferior al hacer hover */
+    z-index: 10; /* Traer al frente */
+    transition: transform 0.4s ease, box-shadow 0.4s ease, margin-bottom 0.4s ease, z-index 0s; /* Ajustar transición de hover */
+}
+
+/* Asegurarse de que la tarjeta debajo de la que se hace hover vuelva a su sitio */
+#proyectos:hover .project-card:not(:hover) {
+     filter: brightness(0.98); /* Efecto sutil a las tarjetas que no tienen hover */
+}
+
 /* Media Queries para Responsividad (Ejemplo básico) */
+@media (max-width: 768px) { /* Adjusted breakpoint */
+    .project-card {
+        margin-bottom: 25px; /* Quitar el stack en pantallas más pequeñas */
+        transform: none !important; /* Remove transforms */
+        margin-top: 0 !important; /* Remove negative margins */
+        z-index: auto !important; /* Reset z-index */
+        scale: 1 !important; /* Reset scale */
+    }
+    .project-card:hover {
+        transform: translateY(-5px) !important; /* Efecto hover más sutil */
+        margin-bottom: 25px; /* Keep normal margin on hover */
+    }
+    #proyectos {
+        padding-bottom: 20px; /* Restaurar padding */
+    }
+    .project-tags {
+        flex-wrap: wrap;
+        margin-bottom: 10px;
+    }
+}
+
 @media (max-width: 600px) {
-    h1 {
-        font-size: 2.5em;
+    /* ...existing code... */
+    /* Ensure stack reset applies here too if not covered by 768px */
+    .project-card {
+        margin-bottom: 25px;
+        transform: none !important;
+        margin-top: 0 !important;
+        z-index: auto !important;
+        scale: 1 !important;
     }
-    nav ul li {
-        display: block;
-        margin: 10px 0;
+     .project-card:hover {
+        transform: translateY(-5px) !important;
+        margin-bottom: 25px;
     }
-    main {
-        padding: 20px;
+     #proyectos {
+        padding-bottom: 20px;
     }
 }

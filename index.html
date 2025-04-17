@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portafolio - Alisha Ibarra Bello</title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌸</text></svg>">
-    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌸</text></svg>">    <link rel="stylesheet" href="style.css">
     <!-- Considerar añadir una fuente "cute" desde Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Pacifico&display=swap" rel="stylesheet">
+    <!-- JavaScript para la funcionalidad de acordeón en los proyectos -->
+    <script src="scripts.js" defer></script>
 </head>
 <body>
     <header>
@@ -22,6 +23,7 @@
                 <li><a href="#formacion">Formación 🎓</a></li>
                 <li><a href="#experiencia">Experiencia 💼</a></li>
                 <li><a href="#certificaciones">Certificaciones 📜</a></li>
+                <li><a href="#proyectos">Proyectos 🚀</a></li>
                 <li><a href="#contacto">Contacto 📧</a></li>
             </ul>
         </nav>
@@ -107,6 +109,285 @@
                  <!-- Añadir enlace si se proporciona uno específico -->
             </article>
             <!-- Se pueden añadir más enlaces a certificados de LinkedIn si se especifican -->
+        </section>
+
+        <section id="proyectos">
+            <h2>Mis Proyectos 🚀</h2>
+            <article class="proyecto project-card">
+                <h3>💖✨ Visor de Cartitas Pokémon ✨💖</h3>
+                <p class="project-summary">¡Holi! (≧∇≦)/ Esta es una app web súper cuqui para ver la info de los Pokémon de la primera generación. ¡Puedes buscar a tus amiguitos Pokémon y filtrarlos por su tipo! Está hecha con mucho amor usando React, Material-UI y React Query. 🌸</p>
+                
+                <div class="project-tags">
+                    <span class="tag">React</span>
+                    <span class="tag">Material-UI</span>
+                    <span class="tag">React Query</span>
+                    <span class="tag">PokeAPI</span>
+                </div>
+                
+                <button class="project-details-btn">Ver más detalles ✨</button>
+                
+                <div class="project-details">
+                    <h4>🎀 Cositas que Hace 🎀</h4>
+                    <ul>
+                        <li>🃏 Muestra cartitas Pokémon que se ven lindas en cualquier pantalla (¡responsive!).</li>
+                        <li>🔍 Busca a tus Pokémon favoritos por su nombrecito. ¡Pika Pika!</li>
+                        <li>💧🔥🌿 Filtra por tipo de Pokémon. ¡Encuentra a los de agua, fuego, planta y más!</li>
+                        <li>☀️🌙 Cambia entre modo día (clarito) y noche (oscurito). ¡Como por arte de magia!</li>
+                        <li>💫 ¡Animaciones suavecitas y efectos visuales que te harán decir "awww"!</li>
+                        <li>ℹ️ Muestra detalles súper importantes:
+                            <ul>
+                                <li>📸 ¡La fotito oficial del Pokémon!</li>
+                                <li>📛 Su nombre adorable.</li>
+                                <li>✨ Sus tipos (¡como Fuego 🔥 o Agua 💧!).</li>
+                                <li>🇪🇸 Una descripción en español para que sepas más de ellos.</li>
+                                <li>📊 Sus estadísticas básicas (HP ❤️, Ataque ⚔️, Defensa 🛡️).</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>🛠️ Herramientas Mágicas Usadas 🛠️</h4>
+                    <ul>
+                        <li><code>React 18</code> (¡la base de nuestra magia! ✨)</li>
+                        <li><code>Material-UI 5</code> (¡para que todo se vea bonito! 💅)</li>
+                        <li><code>React Query</code> (¡maneja los datos como un campeón! 🏆)</li>
+                        <li><code>Framer Motion</code> (¡para esas animaciones tan chulas! 🪄)</li>
+                        <li><code>PokeAPI</code> (¡nuestra Pokédex secreta! 🤫)</li>
+                        <li><code>Vite</code> (¡hace que todo funcione rapidísimo! 🚀)</li>
+                    </ul>
+
+                    <h4>🚀 ¿Cómo Empezar la Aventura? 🚀</h4>
+                    <ol>
+                        <li>Abre tu terminal mágica y escribe <code>npm install</code> para conseguir todas las cositas necesarias. 📦</li>
+                        <li>Luego, escribe <code>npm run dev</code> para que la app cobre vida. ¡Abracadabra! ✨</li>
+                        <li>Usa la barrita de búsqueda de arriba para encontrar a ese Pokémon que tienes en mente. 🤔</li>
+                        <li>¡Toca los botoncitos de tipo para ver solo los Pokémon de esa clase! 👇</li>
+                        <li>Haz clic en el solecito ☀️ o la lunita 🌙 para cambiar los colores de la app. ¡Qué divertido!</li>
+                    </ol>
+
+                    <h4>🌐 API Mágica 🌐</h4>
+                    <p>Este proyectito usa la increíble PokeAPI para conseguir toda la información de nuestros amigos Pokémon, como:</p>
+                    <ul>
+                        <li>Sus datos básicos.</li>
+                        <li>Sus fotitos oficiales.</li>
+                        <li>Descripciones en español.</li>
+                        <li>¡Y sus estadísticas!</li>
+                    </ul>
+
+                    <h4>👩‍💻 Creadora 👩‍💻</h4>
+                    <p>Alisha Ibarra (¡Holi! 👋)</p>
+
+                    <h4>📜 Licencia 📜</h4>
+                    <p>© 2024 Alisha Ibarra. ¡Todos los derechos reservados! (づ｡◕‿‿◕｡)づ</p>
+
+                    <h4>💖 Dedicatoria Especial 💖</h4>
+                    <p>Al final del código hay unas palabritas llenas de cariño para cualquiera que necesite un poquito de ánimo. ¡Nunca te rindas! 💪🌟</p>
+                </div>
+            </article>
+            
+            <article class="proyecto project-card">
+                 <h3>🎀🎹 Piano Mágico Kawaii 🎹🎀</h3>
+                 <p class="project-summary">¡Hola! (*＾▽＾)／ ¡Bienvenido/a al Piano Mágico Kawaii! Un lugarcito súper tierno donde la música y la tecnología se abrazan para crear melodías llenas de amor y color. ¡Prepárate para una experiencia musical adorable con sonidos mágicos y funciones súper cute! 💖✨</p>
+                 
+                 <div class="project-tags">
+                     <span class="tag">React</span>
+                     <span class="tag">Web Audio API</span>
+                     <span class="tag">MediaRecorder API</span>
+                     <span class="tag">CSS3</span>
+                 </div>
+                 
+                 <button class="project-details-btn">Ver más detalles ✨</button>
+                 
+                 <div class="project-details">
+                     <h4>✨ Cositas Mágicas que Puedes Hacer ✨</h4>
+                     <h5>🎵 Tocar el Piano con Ternura 🎵</h5>
+                     <ul>
+                         <li>Un teclado virtual con teclas súper suaves (¡desde C1 hasta C3!). 🎹</li>
+                         <li>¡Las teclas blancas y negras hacen "boing!" cuando las tocas! 🥰</li>
+                         <li>¡Magia visual al tocar! 🌈</li>
+                         <li>¡Salpicaduras de colores pastel! 🎨</li>
+                         <li>¡Notitas musicales que flotan y bailan como estrellitas! (♪ ♫ ♩ ♬) ✨</li>
+                         <li>¡Brillitos y onditas cuando presionas una tecla! ✨🌊</li>
+                         <li>¡Toca con el ratón o con las teclas de tu compu! 🖱️⌨️</li>
+                         <li>¡Mira qué nota estás tocando! 👀</li>
+                     </ul>
+
+                     <h5>🎛️ Mezclador de Sonidos Adorables 🎛️</h5>
+                     <ul>
+                         <li><strong>Ondas de Sonido:</strong> ¡Elige entre sonidos suaves como una nube (Sine), cuadraditos (Square), puntiagudos (Sawtooth) o triangulitos (Triangle)! ☁️🟦🔺</li>
+                         <li><strong>Filtros Mágicos:</strong> ¡Haz que el sonido sea más grave, más agudo o como si estuviera en una cajita! 📦</li>
+                         <li><strong>Sobre ADSR:</strong> ¡Controla cómo nace, vive y se despide cada sonidito! (Ataque, Decaimiento, Sostenimiento, Liberación) 🌱☀️🍂👋</li>
+                         <li><strong>Efectos Especiales:</strong>
+                             <ul>
+                                 <li>¡Eco, eco, eco! (Delay) 🗣️</li>
+                                 <li>¡Como si tocaras en un castillo! (Reverb) 🏰</li>
+                                 <li>¡Un poquito desafinado, pero con estilo! (Detune) 😉</li>
+                             </ul>
+                         </li>
+                         <li><strong>Sonidos Listos:</strong>
+                             <ul>
+                                 <li>Piano clásico 🎹</li>
+                                 <li>Sintetizador espacial ✨</li>
+                                 <li>Órgano de iglesia ⛪ (¡pero cute!)</li>
+                             </ul>
+                         </li>
+                     </ul>
+
+                     <h5>🎼 Canciones para Cantar y Bailar 🎼</h5>
+                     <ul>
+                         <li>¡Toca canciones súper bonitas!
+                             <ul>
+                                <li>"Besos en Guerra" - Morat 💖</li>
+                                <li>"Rumors" - NEFFEX ✨</li>
+                                <li>"Disturbia" - Rihanna 🎶</li>
+                             </ul>
+                         </li>
+                         <li>¡Mira cómo se tocan las notas solitas! 👀</li>
+                         <li>¡Las animaciones bailan al ritmo de la música! 💃🕺</li>
+                     </ul>
+
+                     <h5>🎙️ Guarda Tus Melodías Secretas 🎙️</h5>
+                     <ul>
+                         <li>¡Graba tus propias canciones! 🔴</li>
+                         <li>¡Escúchalas cuando quieras! ▶️</li>
+                         <li>¡Descárgalas para tenerlas siempre contigo! 💾</li>
+                         <li>¡Es súper fácil de usar! 😊</li>
+                     </ul>
+
+                     <h4>🚀 Polvitos Mágicos Utilizados 🚀</h4>
+                     <ul>
+                         <li><code>React</code> (¡La varita mágica!) ✨</li>
+                         <li><code>Web Audio API</code> (¡Para los sonidos!) 🔊</li>
+                         <li><code>MediaRecorder API</code> (¡Para grabar!) 🎤</li>
+                         <li><code>CSS3</code> (¡Para que todo se vea bonito!) 🎨</li>
+                         <li><code>JavaScript ES6+</code> (¡El cerebro!) 🧠</li>
+                         <li><code>Vite</code> (¡El cohete rápido!) 🚀</li>
+                     </ul>
+
+                     <h4>📖 ¿Cómo Jugar? 📖</h4>
+                     <h5>Toca el Piano:</h5>
+                     <ul>
+                         <li>¡Haz clic en las teclitas con el ratón! 🖱️</li>
+                         <li>¡Usa tu teclado! (Mira las letritas en las teclas) ⌨️</li>
+                         <li>¡Disfruta de los colores y las notitas bailarinas! 💖✨</li>
+                     </ul>
+                     <h5>Usa el Mezclador:</h5>
+                     <ul>
+                         <li>¡Haz clic en "Mostrar Mezclador 🎀"!</li>
+                         <li>¡Mueve las palanquitas y botoncitos! 🎛️</li>
+                         <li>¡Prueba los sonidos listos o crea el tuyo! 🧪</li>
+                     </ul>
+                     <h5>Escucha Canciones:</h5>
+                     <ul>
+                         <li>¡Elige una canción de la lista! 🎵</li>
+                         <li>¡Dale al botón de tocar! ▶️</li>
+                         <li>¡Mira cómo las notas y los colores bailan! 🤩</li>
+                     </ul>
+                     <h5>Graba tu Música:</h5>
+                     <ul>
+                         <li>¡Presiona el botón rojo "Grabar 🔴"!</li>
+                         <li>¡Toca tu melodía más bonita! 🎶</li>
+                         <li>¡Presiona "Detener ⏹️" cuando termines!</li>
+                         <li>¡Escucha, descarga o empieza de nuevo! ✨</li>
+                     </ul>
+
+                     <h4>🎨 ¡Novedades Súper Kawaii! 🎨</h4>
+                     <ul>
+                        <li><strong>Estilo Kawaii General:</strong> ¡Colores pastel, botones redonditos y mucho amor! 💖💜💙💛</li>
+                        <li><strong>Botones Adorables:</strong> ¡Con emojis y colores súper cute! 🥰</li>
+                        <li><strong>Animaciones Mágicas:</strong> ¡Notas que flotan, giran y rebotan con más alegría! ✨</li>
+                     </ul>
+
+                     <p>¡Esperamos que te diviertas mucho con el Piano Mágico Kawaii! (づ｡◕‿‿◕｡)づ</p>
+                </div>
+            </article>
+            
+            <article class="proyecto project-card">
+                <h3>💖✨ Sistema de Gestión de Inventarios Kawaii ✨💖</h3>
+                <p class="project-summary">¡Holi! (づ｡◕‿‿◕｡)づ ¡Bienvenid@ a este adorable Sistema de Gestión de Inventarios! Esta es una aplicación súper cute para que lleves el control de tus cositas con una interfaz gráfica muy mona. Puedes añadir, importar, exportar y hasta compartir tu inventario por la red. 💾💕</p>
+                
+                <div class="project-tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">ttkbootstrap</span>
+                    <span class="tag">pandas</span>
+                    <span class="tag">Networking</span>
+                </div>
+                
+                <button class="project-details-btn">Ver más detalles ✨</button>
+                
+                <div class="project-details">
+                    <h4>🎀 Características Mágicas 🎀</h4>
+                    <ul>
+                        <li><strong>Login Secreto 🔑:</strong> Entra de forma segura con tu nombre y contraseña secreta guardados en <code>users.json</code>. ¡Tenemos usuarios listos para ti!
+                            <ul>
+                                <li>Usuario: <code>admin</code>, Contraseña: <code>admin</code> (¡El jefe! 👑)</li>
+                                <li>Usuario: <code>user</code>, Contraseña: <code>user123</code> (¡Un amigui! 😊)</li>
+                            </ul>
+                        </li>
+                        <li><strong>Registro de Amiguis Nuevos 📝:</strong> ¡Nuevos amigos pueden unirse creando su usuario y contraseña!</li>
+                        <li><strong>Cambiar Contraseña Secreta ✨:</strong> Si quieres cambiar tu contraseña, ¡puedes hacerlo fácil!</li>
+                        <li><strong>Borrar Usuarios (Solo Admin) 🧹:</strong> El admin puede ayudar a ordenar la lista de usuarios.</li>
+                        <li><strong>Añadir Cositas Nuevas 🛍️:</strong> Guarda tus productos con ID, nombre, cuántos tienes y su precio.</li>
+                        <li><strong>Buscar Tesoros 🔍:</strong> Encuentra tus cositas rápido buscando por ID o nombre. ¡Como un detective!</li>
+                        <li><strong>Decir Adiós a Productos 👋:</strong> Selecciona los productos que ya no necesitas y ¡listo!</li>
+                        <li><strong>Importar y Exportar Datos 📤📥:</strong> Guarda o carga tu inventario usando archivos Excel (<code>.xlsx</code>) o JSON (<code>.json</code>). ¡Súper útil!</li>
+                        <li><strong>Guardado Automágico 💾:</strong> Tus cositas se guardan solitas en <code>inventory_data.json</code>. ¡No te preocupes!</li>
+                        <li><strong>Compartir por Red 🌐:</strong> Envía y recibe el inventario con otros amiguis en la misma red. ¡Trabajo en equipo!</li>
+                        <li><strong>Chat Kawaii 💬:</strong> ¡Habla con otros usuarios conectados en la red! (ﾉ´ヮ`)ﾉ*:･ﾟ✧</li>
+                        <li><strong>Interfaz Súper Mona 😍:</strong> ¡Hecha con <code>ttkbootstrap</code> para que todo se vea precioso!</li>
+                    </ul>
+
+                    <h4>🛠️ Cositas que Necesitas 🛠️</h4>
+                    <ul>
+                        <li>Python 3.8 o más nuevo 🐍</li>
+                        <li>Un poquito de magia (dependencias):
+                            <ul>
+                                <li><code>ttkbootstrap</code> (¡Para que se vea bonito!)</li>
+                                <li><code>pandas</code> (¡Para los archivos Excel!)</li>
+                            </ul>
+                        </li>
+                        <li>Puedes instalar esta magia con pip: <br><code>pip install ttkbootstrap pandas</code><br>(Asegúrate de estar en tu entorno virtual si usas uno) 😉</li>
+                    </ul>
+
+                    <h4>📋 ¿Cómo Jugar? 📋</h4>
+                    <ol>
+                        <li>Abre tu terminal y ve a la carpeta del proyecto.</li>
+                        <li>Escribe <code>python inventory_app.py</code> y presiona Enter. ¡Tachán! ✨</li>
+                        <li>Inicia sesión con <code>admin/admin</code>, <code>user/user123</code> o crea tu propia cuenta.</li>
+                        <li>¡Diviértete usando la app!
+                            <ul>
+                                <li>Añade productos nuevos. ➕</li>
+                                <li>Busca lo que necesites. 🧐</li>
+                                <li>Elimina lo que ya no uses. ➖</li>
+                                <li>Importa/Exporta tus listas. 📄</li>
+                                <li>Comparte con tus amigos por red. 📡</li>
+                                <li>Chatea un ratito. 🗣️</li>
+                                <li>Cambia tu contraseña si quieres. 🔒</li>
+                                <li>(Si eres admin) ¡Administra los usuarios! 🧑‍💼</li>
+                            </ul>
+                        </li>
+                    </ol>
+
+                    <h4>📂 ¿Qué hay Dentro? 📂</h4>
+                    <ul>
+                        <li><code>inventory_app.py</code>: ¡El corazón de la app! ❤️</li>
+                        <li><code>inventory_data.json</code>: Aquí viven tus productos. 🏠</li>
+                        <li><code>users.json</code>: ¡La lista secreta de usuarios! 🤫</li>
+                        <li><code>README.md</code>: ¡Estas instrucciones tan monas! (｡•̀ᴗ-)✧</li>
+                    </ul>
+
+                     <h4>📸 ¡Una Foto! 📸</h4>
+                     <p>💖 ¡Pronto pondremos una foto súper linda aquí! 💖</p>
+
+                    <h4>🤝 ¿Quieres Ayudar? 🤝</h4>
+                    <p>¡Claro que sí! Si tienes ideas geniales o quieres mejorar algo, ¡eres super bienvenid@! (ɔ◔‿◔)ɔ ♥</p>
+
+                    <h4>💌 ¿Preguntas? 💌</h4>
+                    <p>Si tienes dudas o quieres decir holi, escribe a: <a href="mailto:ibarrabelloalisha@gmail.com">ibarrabelloalisha@gmail.com</a> 📬</p>
+
+                    <p>¡Gracias por usar este inventario tan kawaii! ¡Disfrútalo mucho! (づ￣ ³￣)づ 💖</p>
+                </div>
+            </article>
+            <!-- Aquí puedes añadir más proyectos en el futuro, usando la clase project-card -->
         </section>
 
         <section id="contacto">
