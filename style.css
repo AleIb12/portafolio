@@ -453,3 +453,29 @@ body::after { /* Otro detalle */
         padding-bottom: 20px;
     }
 }
+
+.project-demo-link {
+    display: inline-block;
+    background-color: #a8f0ad; /* Verde pastel más suave */
+    color: #338246; /* Verde más oscuro para mejor contraste */
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+    font-size: 0.9em;
+    margin-right: 10px;
+    margin-bottom: 15px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 5px rgba(168, 240, 173, 0.3);
+}
+
+.project-demo-link:hover {
+    background-color: #bef5c2; /* Verde pastel más claro al pasar el cursor */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(168, 240, 173, 0.5);
+    text-decoration: none;
+    color: #206031;
+}

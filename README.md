@@ -34,6 +34,10 @@ Este es un portafolio personal hecho con mucho amor <3, usando HTML, CSS y un po
 
 ¡Es súper fácil! Solo abre el archivo `index.html` en tu navegador favorito y ¡listo! 💻
 
+También puedes visitar mis proyectos online:
+- ✨ [Visor de Cartitas Pokémon](https://projecto-pokemon.vercel.app) - ¡Encuentra a tus Pokémon favoritos!
+- 🎹 [Piano Mágico Kawaii](https://piano-six-kappa.vercel.app) - ¡Crea música adorable!
+
 ## 🏗️ ¿Qué Hay Dentro de la Cajita? 🏗️
 
 ```
